@@ -13,6 +13,9 @@ projects = require '../config/projects.coffee'
 servers  = require '../config/servers.coffee'
 str_pad  = func.str_pad
 
+process.env.PATH = '/usr/local/rvm/gems/ruby-2.2.0/bin:/usr/local/rvm/rubies/ruby-2.2.0/bin:' + process.env.PATH
+process.env.GEM_PATH = "/usr/local/rvm/gems/ruby-2.2.0:/usr/local/rvm/gems/ruby-2.2.0@global"
+
 module.exports = (robot) ->
 
   # Post message to Slack.
