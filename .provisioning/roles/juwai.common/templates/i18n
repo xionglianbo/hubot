@@ -1,0 +1,2 @@
+LANG="{{ common_lang }}"
+LC_ALL="{{ common_lc_all }}"

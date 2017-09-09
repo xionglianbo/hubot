@@ -1,0 +1,11 @@
+---
+# This playbook only installs dependencies for running hubot
+- hosts: all
+  roles:
+    - { role: juwai.supervisor }
+    - { role: geerlingguy.nodejs }
+    - { role: geerlingguy.redis }
+
+  pre_tasks:
+    - set_fact:
+        ansible_distribution_major_version: '6'

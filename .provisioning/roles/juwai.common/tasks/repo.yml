@@ -1,0 +1,13 @@
+---
+- name: install webtatic repo
+  yum:
+    name: https://mirror.webtatic.com/yum/el6/latest.rpm
+    state: present
+  when: env == 'vagrant'
+
+- name: update packages
+  yum:
+    name: '*'
+    state: latest
+    update_cache: yes
+  when: force_update_yum

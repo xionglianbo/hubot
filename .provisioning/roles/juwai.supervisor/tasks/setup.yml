@@ -1,0 +1,9 @@
+---
+- name: install supervisord
+  pip:
+    name: supervisor
+    version: "{{ supervisord_version }}"
+    state: present
+    executable: "{{ executable_pip }}"
+  environment:
+    PATH: /usr/local/bin:/usr/bin:{{ ansible_env.PATH }}

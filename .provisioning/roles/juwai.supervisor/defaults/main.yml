@@ -1,0 +1,4 @@
+---
+supervisord_config_dir: "/etc/supervisor.d"
+supervisord_version: 3.3.1
+

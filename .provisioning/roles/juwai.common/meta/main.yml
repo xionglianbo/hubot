@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Juwai Limited
+  description: Common tasks needed by other Juwai roles
+  company: Juwai Limited
+  license: MIT / BSD
+  min_ansible_version: 1.9
+  platforms:
+  - name: EL
+    versions:
+    - 6
+  # - name: Amazon
+  #   versions:
+  #   - 2015.09
+  galaxy_tags: [amazon, centos6, locale, repo, packages]
+dependencies: []

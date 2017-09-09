@@ -1,0 +1,6 @@
+---
+env: 'staging'
+
+executable_pip: 'pip-2.7'
+
+timezone: 'Asia/Singapore'
