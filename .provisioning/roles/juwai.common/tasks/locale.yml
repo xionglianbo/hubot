@@ -1,0 +1,5 @@
+---
+- name: change system locale
+  template:
+    src: i18n
+    dest: /etc/sysconfig/i18n

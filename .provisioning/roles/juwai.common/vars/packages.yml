@@ -1,0 +1,12 @@
+---
+__system_packages:
+  - gcc
+  - libselinux-python
+  - tmpwatch
+  - xz
+  - zlib-devel
+  - openssl-devel
+  - git
+  - vim
+  - mlocate
+  - tree

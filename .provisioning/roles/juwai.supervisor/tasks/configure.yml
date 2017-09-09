@@ -1,0 +1,26 @@
+---
+- name: copy default supervisord configure
+  template: src=supervisord.conf.j2 dest=/etc/supervisord.conf
+
+- name: ensure supervisord default conf folder is present
+  file:
+    path: "{{ supervisord_config_dir }}"
+    state: directory
+    mode: 0755
+
+- name: copy init script for supervisord
+  copy:
+    src: supervisord.sh
+    dest: /etc/init.d/supervisord
+    owner: root
+    group: root
+    mode: 0755
+
+- name: ensure supervisord start on boot
+  service: name=supervisord state=started enabled=yes
+
+- name: make supervisorctl available on the path
+  alternatives:
+    name: supervisorctl
+    link: /usr/bin/supervisorctl
+    path: /usr/local/bin/supervisorctl

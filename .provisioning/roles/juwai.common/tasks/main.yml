@@ -1,0 +1,9 @@
+---
+
+- include: locale.yml
+
+- include: timezone.yml
+
+- include: repo.yml
+
+- include: system_packages.yml

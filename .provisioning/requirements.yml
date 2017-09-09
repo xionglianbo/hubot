@@ -1,0 +1,9 @@
+---
+# Juwai public roles
+- src: juwai.common
+- src: juwai.python27
+- src: juwai.supervisor
+
+# Third party roles
+- src: geerlingguy.nodejs
+- src: geerlingguy.redis

@@ -1,0 +1,38 @@
+---
+# Variable setup.
+- name: Include variables
+  include_vars: "packages.yml"
+
+- name: ensure pre-defined default packages present
+  yum:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ __system_packages }}'
+
+- name: ensure user-defined basic packages present
+  yum:
+    name: '{{ item }}'
+    state: present
+  with_items: '{{ system_packages }}'
+  when: system_packages is defined
+
+# Install MySQL related packages
+- name: ensure mysql-devel present
+  yum:
+    name: mysql-devel
+    state: present
+  when: ansible_distribution != 'Amazon'
+
+- name: ensure mysql-devel present
+  yum:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - mysql55
+    - mysql55-devel
+  when: ansible_distribution == 'Amazon'
+
+- name: ensure latest version of curl is installed
+  yum:
+    name: curl
+    state: latest
